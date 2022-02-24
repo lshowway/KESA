@@ -1,9 +1,9 @@
-> This is the original source of KESA: A Knowledge Enhanced Approach For Sentiment Analysis
+> This is the original source cod of KESA: A Knowledge Enhanced Approach For Sentiment Analysis
 
 #### Requirements
 > install Python 3.6 
 
-> If you are using Windows, create python virtual environment by platform, e.g., Pycharm and click install `requirements.txt`.
+> If you are using Windows, create python virtual environment by platform, e.g., Pycharm, and click install `requirements.txt`.
 > 
 > If your are using Ubuntu, create python virtual environment by `python3 -m venv env`, and next activate the virtual environment by `source kesa/bin/activate`, and then install python packages by `pip install -r requirements`.
  
