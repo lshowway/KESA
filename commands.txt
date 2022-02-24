@@ -1,0 +1,24 @@
+#### bert 
+srun --gres=gpu:1 python run_sentiment_classifier.py   --do_train   --do_eval  --model_type bert_raw  --model_name_or_path  ../models/bert_base_uncased   --task_name sst-2   --data_dir  ../dataset/SST_2/  --num_train_epochs 3.0    --per_gpu_eval_batch_size 1000  --per_gpu_train_batch_size 32   --max_seq_length 128   --learning_rate 5e-5    --seed  11 
+
+#### xlnet
+python run_sentiment_classifier.py   --do_train   --do_eval  --model_type xlnet_raw  --model_name_or_path  ../models/xlnet_base_cased   --task_name sst-2   --data_dir  ../dataset/SST_2/  --num_train_epochs 3.0   --per_gpu_eval_batch_size 1000  --per_gpu_train_batch_size 32   --max_seq_length 128   --learning_rate 2e-5  --seed  11
+
+#### Roberta
+srun --gres=gpu:1 python run_sentiment_classifier.py   --do_train   --do_eval  --model_type roberta_raw  --model_name_or_path  ../models/roberta_base_en   --task_name sst-2   --data_dir  ../dataset/SST_2/  --num_train_epochs 3.0    --per_gpu_eval_batch_size 1000  --per_gpu_train_batch_size 32   --max_seq_length 128   --learning_rate 2e-5    --seed  11
+
+srun --gres=gpu:1 python run_sentiment_classifier.py   --do_train   --do_eval  --model_type roberta_2task  --model_name_or_path  ../models/roberta_base_en   --task_name sst-2   --data_dir  ../dataset/SST_2/  --all_data_file   ../dataset/SST_2/sst.binary.all  --lexicon_file ../dataset/lexicon/SWN.word.polarity    --num_train_epochs 3.0   --per_gpu_eval_batch_size 1000  --per_gpu_train_batch_size 32   --max_seq_length 128   --learning_rate 2e-5   --loss_type aggregation   --loss_balance_type weight_sum   --a 0.01  --b 0.0  --seed  11 
+
+srun --gres=gpu:1 python run_sentiment_classifier.py   --do_train   --do_eval  --model_type roberta_2task  --model_name_or_path  ../models/roberta_base_en   --task_name sst-2   --data_dir  ../dataset/SST_2/  --all_data_file   ../dataset/SST_2/sst.binary.all  --lexicon_file ../dataset/lexicon/SWN.word.polarity    --num_train_epochs 3.0   --per_gpu_eval_batch_size 1000  --per_gpu_train_batch_size 32   --max_seq_length 128   --learning_rate 2e-5   --loss_type aggregation   --loss_balance_type add_vec   --c 1.0  --seed  11 
+
+
+# =====================================================================
+### SentiLARE pretrained roberta model+SST-2 (this is baseline)
+srun --gres=gpu:1 python run_sentiment_classifier.py   --do_train   --do_eval  --model_type roberta_raw  --model_name_or_path  ../models/SentiLARE_pretrain_roberta   --task_name sst-2   --data_dir  ../dataset/SST_2/  --num_train_epochs 3.0  --per_gpu_eval_batch_size 1000  --per_gpu_train_batch_size 32   --max_seq_length 128   --learning_rate 2e-5   --seed  11
+
+srun --gres=gpu:1 python run_sentiment_classifier.py   --do_train   --do_eval  --model_type roberta_2task  --model_name_or_path  ../models/SentiLARE_pretrain_roberta   --task_name sst-2   --data_dir  ../dataset/SST_2/  --all_data_file   ../dataset/SST_2/sst.binary.all  --lexicon_file ../dataset/lexicon/SWN.word.polarity    --num_train_epochs 3.0   --per_gpu_eval_batch_size 1000  --per_gpu_train_batch_size 32   --max_seq_length 128   --learning_rate 2e-5   --loss_type joint   --loss_balance_type weight_sum   --a 0.01  --b 0.0  --seed  11 
+
+srun --gres=gpu:1 python run_sentiment_classifier.py   --do_train   --do_eval  --model_type roberta_2task  --model_name_or_path  ../models/SentiLARE_pretrain_roberta   --task_name sst-2   --data_dir  ../dataset/SST_2/  --all_data_file   ../dataset/SST_2/sst.binary.all  --lexicon_file ../dataset/lexicon/SWN.word.polarity    --num_train_epochs 3.0   --per_gpu_eval_batch_size 1000  --per_gpu_train_batch_size 32   --max_seq_length 128   --learning_rate 2e-5   --loss_type aggregation   --loss_balance_type add_vec   --c 0.01  --seed  11 
+
+
+
