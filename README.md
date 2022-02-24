@@ -3,7 +3,7 @@
 #### Requirements
 > install Python 3.6 
 
-> If you are using Windows, create python virtual environment platform, e.g., Pycharm and click install `requirements.txt`.
+> If you are using Windows, create python virtual environment by platform, e.g., Pycharm and click install `requirements.txt`.
 > 
 > If your are using Ubuntu, create python virtual environment by `python3 -m venv env`, and next activate the virtual environment by `source kesa/bin/activate`, and then install python packages by `pip install -r requirements`.
  
@@ -19,3 +19,5 @@
 #### Fine-tune
 > You can fine-tune KESA on SST2 dataset based on checkpoints released by SentiLARE, with label combination is CC (conditional combination) using this command: 
 > `python run_sentiment_classifier.py   --do_train   --do_eval  --model_type roberta_2task  --model_name_or_path  ../models/SentiLARE_pretrain_roberta   --task_name sst-2   --data_dir  ../dataset/SST_2/  --all_data_file   ../dataset/SST_2/sst.binary.all  --lexicon_file ../dataset/lexicon/SWN.word.polarity    --num_train_epochs 3.0   --per_gpu_eval_batch_size 1000  --per_gpu_train_batch_size 32   --max_seq_length 128   --learning_rate 2e-5   --loss_type aggregation   --loss_balance_type add_vec   --c 0.01  --seed  11`
+
+> For more commands, please refer to `commands.txt`
