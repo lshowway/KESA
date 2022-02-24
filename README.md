@@ -5,7 +5,7 @@
 
 > If you are using Windows, create python virtual environment by platform, e.g., Pycharm, and click install `requirements.txt`.
 > 
-> If your are using Ubuntu, create python virtual environment by `python3 -m venv env`, and next activate the virtual environment by `source kesa/bin/activate`, and then install python packages by `pip install -r requirements`.
+> If your are using Ubuntu, create python virtual environment by `python3 -m venv kesa`, and next activate the virtual environment by `source kesa/bin/activate`, and then install python packages by `pip install -r requirements`.
  
 
 #### Dataset and Rosources
