@@ -1,4 +1,4 @@
-> This is the original source cod of KESA: A Knowledge Enhanced Approach For Sentiment Analysis
+> This is the original source cod of KESA: A Knowledge Enhanced Approach For Sentiment Analysis. AACL, 2022.
 
 #### Requirements
 > install Python 3.6 
